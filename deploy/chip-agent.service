@@ -1,0 +1,13 @@
+[Unit]
+Description=CHIP AI Agent
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/chip-os-agent
+ExecStart=/usr/bin/python3 agent/main.py
+Restart=always
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
